@@ -6,55 +6,57 @@
       </tr>
       <tr class="table">
         <th scope="row">Cognome</th>
-        <td>Cell</td>
+        <td>{{client.cognomeContatto}}</td>
       </tr>
       <tr class="table">
         <th scope="row">Email</th>
-        <td>Cell</td>
+        <td>{{client.email}}</td>
       </tr>
       <tr class="table">
         <th scope="row">Email personale</th>
-        <td>Cell</td>
+        <td>{{client.emailContatto}}</td>
       </tr>
       <tr class="table">
         <th scope="row">PEC</th>
-        <td>Cell</td>
+        <td>{{client.pec}}</td>
       </tr>
       <tr class="table">
         <th scope="row">Teleono</th>
-        <td>Cell</td>
+        <td>{{client.telefono}}</td>
       </tr>
       <tr class="table">
         <th scope="row">Telefono Personale</th>
-        <td>Cell</td>
+        <td>{{client.telefonoContatto}}</td>
       </tr>
       <tr class="table">
         <th scope="row">Ragione Sociale</th>
-        <td>Cell</td>
+        <td>{{client.ragioneSociale}}</td>
       </tr>
       <tr class="table">
         <th scope="row">Partita IVA</th>
-        <td>Cell</td>
+        <td>{{client.partitaIva}}</td>
       </tr>
       <tr class="table">
         <th scope="row">Indirizzo</th>
-        <td>Cell</td>
+        <td>{{client.indirizzoSedeOperativa.via}}{{client.indirizzoSedeOperativa.civico}}</td>
       </tr>
       <tr class="table">
         <th scope="row">CAP</th>
-        <td>Cell</td>
+        <td>{{client.indirizzoSedeOperativa.cap}}</td>
       </tr>
       <tr class="table">
         <th scope="row">Località</th>
-        <td>Cell</td>
+        <td>{{client.indirizzoSedeOperativa.localita}}</td>
       </tr>
       <tr class="table">
         <th scope="row">Comune</th>
-        <td>Cell</td>
+        <td>{{client.indirizzoSedeOperativa.comune.nome}}</td>
       </tr>
       <tr class="table">
         <th scope="row">Provincia</th>
-        <td>Cell</td>
+        <td>{{client.indirizzoSedeOperativa.comune.provincia.nome}}
+          {{client.indirizzoSedeOperativa.comune.provincia.sigla}}
+        </td>
       </tr>
     </tbody>
   </table>

@@ -9,7 +9,7 @@ import { IClient } from '../interfaces/iclient';
 })
 export class ClientsService {
 
-  urlAPI = environment.urlAPI + '/api/clienti?size=100&sort=id,ASC';
+  urlAPI = environment.urlAPI + '/api/clienti?size=150&sort=id,ASC';
   urlAPI_ID = environment.urlAPI + '/api/clienti/';
 
   constructor(private http: HttpClient) {
@@ -19,7 +19,7 @@ export class ClientsService {
     return this.http.get<IApi>(this.urlAPI);
   }
 
-  getCliente(id:number) {
+  getCliente(id:string) {
     return this.http.get<IClient>(this.urlAPI_ID + id);
   }
 }
