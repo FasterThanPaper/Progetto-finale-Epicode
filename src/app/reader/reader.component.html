@@ -4,7 +4,7 @@
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Family Name</th>
-      <th scope="col">Email</th>
+      <th scope="col">Ragione Sociale</th>
     </tr>
   </thead>
   <tbody>
@@ -12,8 +12,8 @@
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ item.nomeContatto }}</td>
       <td>{{ item.cognomeContatto}}</td>
-      <td>{{ item.emailContatto}}</td>
-      <td><a class="btn btn-warning" [routerLink]="['/details']">More info</a></td>
+      <td>{{ item.ragioneSociale}}</td>
+      <td><a class="btn btn-warning" [routerLink]="['/details/{{item.id}}']">Questo:{{item.id}}</a></td>
     </tr>
   </tbody>
 </table>
