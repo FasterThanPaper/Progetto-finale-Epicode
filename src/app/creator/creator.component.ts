@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IClient } from '../interfaces/iclient';
 import { ClientsService } from '../services/clients.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-details',
-  templateUrl: './details.component.html',
-  styleUrls: ['./details.component.css']
+  selector: 'app-creator',
+  templateUrl: './creator.component.html',
+  styleUrls: ['./creator.component.css']
 })
-export class DetailsComponent implements OnInit {
+export class CreatorComponent implements OnInit {
 
   client: IClient = {
     ragioneSociale: '',
@@ -56,27 +56,26 @@ export class DetailsComponent implements OnInit {
     dataInserimento: '',
     dataUltimoContatto: '',
     fatturatoAnnuale: 0
-  };
-
-  constructor(private clientservice: ClientsService, private route: ActivatedRoute) {
-    this.route.params.subscribe(element => {
-      let x = element['id'];
-      if (x) {
-        this.clientservice.getCliente(x).subscribe(response => this.client = response);
-        console.log(x);
-      }
-    });
-   }
-
-  ngOnInit(): void {
-
   }
 
-  // ngOnInit(): void {
-  //   let x = this.route.snapshot.paramMap.get('id');
-  //   if (x) {
-  //     console.log(x)
-  //     this.clientservice.getCliente(x).subscribe(response => console.log(response));
-  //   }
-  // }
+  constructor(
+    private clientService: ClientsService,
+    private router: Router,
+    private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      if(params.id) {
+        this.clientService.getCliente(params.id).subscribe(response => this.client = response);
+      }
+    })
+  }
+
+  nuovoContatto () {
+    if (!this.client.id) {
+      console.log("Cliente Aggiunto")
+      this.clientService.addCliente(this.client).subscribe(response => console.log(response))
+    }
+  }
+
 }

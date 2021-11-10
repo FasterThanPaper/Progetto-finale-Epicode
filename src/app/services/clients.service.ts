@@ -22,4 +22,8 @@ export class ClientsService {
   getCliente(id:string) {
     return this.http.get<IClient>(this.urlAPI_ID + id);
   }
+
+  addCliente(item:IClient) {
+    return this.http.post(this.urlAPI, item);
+  }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CreatorComponent } from './creator/creator.component';
 import { DetailsComponent } from './details/details.component';
 import { ReaderComponent } from './reader/reader.component';
 
@@ -11,6 +12,9 @@ const routes: Routes = [
   {
     path: 'details/:id',
     component: DetailsComponent
+  },
+  { path: 'creator',
+    component: CreatorComponent
   },
   { path: '',
   pathMatch: 'full',

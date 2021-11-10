@@ -1,9 +1,11 @@
-<ul class="nav nav-pills d-flex flex-row justify-content-start my-4">
-  <li class="nav-item mx-2">
-    <a class="btn btn-primary" href="#" [routerLink]="['/reader']"> << Indietro </a>
-  </li>
-</ul>
-<table class="table table-striped">
+<div class="container">
+  <ul class="nav nav-pills d-flex flex-row justify-content-start my-4">
+    <li class="nav-item mx-2">
+      <a class="btn btn-primary" href="#" [routerLink]="['/reader']">
+        << Indietro </a>
+    </li>
+  </ul>
+  <table class="table table-striped">
     <tbody>
       <tr>
         <th scope="row">Nome</th>
@@ -41,27 +43,81 @@
         <th scope="row">Partita IVA</th>
         <td>{{client.partitaIva}}</td>
       </tr>
+    </tbody>
+  </table>
+
+  <h3>Indirizzo sede operativa</h3>
+  <table class="table">
+    <tbody>
+    <tr class="table">
+      <th scope="row">Via/Piazza</th>
+      <td>{{client.indirizzoSedeOperativa.via}}</td>
+    </tr>
+    <tr class="table">
+      <th scope="row">N. Civico</th>
+      <td>{{client.indirizzoSedeOperativa.civico}}</td>
+    </tr>
+    <tr class="table">
+      <th scope="row">CAP</th>
+      <td>{{client.indirizzoSedeOperativa.cap}}</td>
+    </tr>
+    <tr class="table">
+      <th scope="row">Località</th>
+      <td>{{client.indirizzoSedeOperativa.localita}}</td>
+    </tr>
+    <tr class="table">
+      <th scope="row">Comune</th>
+      <td>{{client.indirizzoSedeOperativa.comune.nome}}</td>
+    </tr>
+    <tr class="table">
+      <th scope="row">Provincia</th>
+      <td>{{client.indirizzoSedeOperativa.comune.provincia.nome}}</td>
+    </tr>
+    <tr class="table">
+      <th scope="row">Sigla Provincia</th>
+      <td>{{client.indirizzoSedeOperativa.comune.provincia.sigla}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h3>Indirizzo sede legale</h3>
+  <table class="table">
+    <tbody>
       <tr class="table">
-        <th scope="row">Indirizzo</th>
-        <td>{{client.indirizzoSedeOperativa.via}}{{client.indirizzoSedeOperativa.civico}}</td>
+        <th scope="row">Via/Piazza</th>
+        <td>{{client.indirizzoSedeLegale.via}}</td>
+      </tr>
+      <tr class="table">
+        <th scope="row">N. Civico</th>
+        <td>{{client.indirizzoSedeLegale.civico}}</td>
       </tr>
       <tr class="table">
         <th scope="row">CAP</th>
-        <td>{{client.indirizzoSedeOperativa.cap}}</td>
+        <td>{{client.indirizzoSedeLegale.cap}}</td>
       </tr>
       <tr class="table">
         <th scope="row">Località</th>
-        <td>{{client.indirizzoSedeOperativa.localita}}</td>
+        <td>{{client.indirizzoSedeLegale.localita}}</td>
       </tr>
       <tr class="table">
         <th scope="row">Comune</th>
-        <td>{{client.indirizzoSedeOperativa.comune.nome}}</td>
+        <td>{{client.indirizzoSedeLegale.comune.nome}}</td>
       </tr>
       <tr class="table">
         <th scope="row">Provincia</th>
         <td>{{client.indirizzoSedeOperativa.comune.provincia.nome}}
-          {{client.indirizzoSedeOperativa.comune.provincia.sigla}}
+
         </td>
+      </tr>
+      <tr class="table">
+        <th scope="row">Sigla Provincia</th>
+        <td>{{client.indirizzoSedeOperativa.comune.provincia.sigla}}</td>
       </tr>
     </tbody>
   </table>
+</div>
+
+
+
+
+<!-- <app-accordion></app-accordion> -->

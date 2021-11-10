@@ -2,9 +2,10 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Family Name</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Cognome</th>
       <th scope="col">Ragione Sociale</th>
+      <th scope="col"><a class="btn btn-primary" [routerLink]="['/creator/']">Aggiungi >> </a></th>
     </tr>
   </thead>
   <tbody>
@@ -13,7 +14,7 @@
       <td>{{ item.nomeContatto }}</td>
       <td>{{ item.cognomeContatto}}</td>
       <td>{{ item.ragioneSociale}}</td>
-      <td><a class="btn btn-warning" [routerLink]="['/details/' + item.id]">Espandi >> </a></td>
+      <td><a class="btn btn-warning" [routerLink]="['/details/' + item.id]">Espandi >> </a><a class="btn btn-danger mx-2">Elimina</a></td>
     </tr>
   </tbody>
 </table>

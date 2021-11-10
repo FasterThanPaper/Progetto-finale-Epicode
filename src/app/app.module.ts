@@ -10,6 +10,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetailsComponent } from './details/details.component';
 import { InterceptorInterceptor } from './interceptor.interceptor';
 import { FormsModule } from '@angular/forms';
+import { AccordionComponent } from './accordion/accordion.component';
+import { CreatorComponent } from './creator/creator.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FormsModule } from '@angular/forms';
     ReaderComponent,
     HeadingComponent,
     FootingComponent,
-    DetailsComponent
+    DetailsComponent,
+    AccordionComponent,
+    CreatorComponent
   ],
   imports: [
     BrowserModule,
