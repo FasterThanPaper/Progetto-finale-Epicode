@@ -2,15 +2,11 @@
   <ul class="nav nav-pills d-flex flex-row justify-content-start my-4">
     <li class="nav-item mx-2">
       <a class="btn btn-primary" href="#" [routerLink]="['/reader']">
-        << Indietro </a>
-    </li>
-    <li class="nav-item mx-2">
-      <a class="btn btn-primary" href="#" [routerLink]="['/creator']">
-        Aggiungi Cliente</a>
+        &#8678; Indietro </a>
     </li>
     <li class="nav-item mx-2">
       <a class="btn btn-primary" href="#" [routerLink]="['/update/' + client.id]">
-        Modifica questo Cliente</a>
+        Modifica questo Cliente &#10002;</a>
     </li>
   </ul>
   <table class="table table-striped">
@@ -125,7 +121,7 @@
   </table>
 </div>
 
-<div class="container">
+<div class="container" id="carosello">
   <app-accordion></app-accordion>
 </div>
 

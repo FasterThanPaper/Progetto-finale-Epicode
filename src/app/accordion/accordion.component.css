@@ -4,7 +4,7 @@
 }
 
 .bordino {
-    border: solid grey 3px;
+    border: solid rgb(185, 185, 185) 2px;
     border-collapse: separate;
     border-radius: 5px;
 }
