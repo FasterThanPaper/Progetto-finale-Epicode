@@ -11,51 +11,48 @@ import { ActivatedRoute } from '@angular/router';
 export class DetailsComponent implements OnInit {
 
   client: IClient = {
-    ragioneSociale: '',
-    partitaIva: '',
-    tipoCliente: '',
-    email: '',
-    pec: '',
-    telefono: '',
-    nomeContatto: '',
-    cognomeContatto: '',
-    telefonoContatto: '',
-    emailContatto: '',
+    ragioneSociale: "",
+    partitaIva: "",
+    tipoCliente: "",
+    email: "",
+    pec: "",
+    telefono: "",
+    nomeContatto: "",
+    cognomeContatto: "",
+    telefonoContatto: "",
+    emailContatto: "",
     indirizzoSedeOperativa: {
-      id: undefined,
-      via: '',
-      civico: '',
-      cap: '',
-      localita: '',
-      comune: {
-        id: undefined,
-        nome: '',
-        provincia: {
-          id: undefined,
-          nome: '',
-          sigla: ''
+        via: "",
+        civico: "",
+        cap: "",
+        localita: "",
+        comune: {
+            id: 1,
+            nome: "",
+            provincia: {
+                id: 1,
+                nome: "",
+                sigla: ""
+            }
         }
-      }
     },
     indirizzoSedeLegale: {
-      id: undefined,
-      via: '',
-      civico: '',
-      cap: '',
-      localita: '',
-      comune: {
-        id: undefined,
-        nome: '',
-        provincia: {
-          id: undefined,
-          nome: '',
-          sigla: ''
+        via: "",
+        civico: "",
+        cap: "",
+        localita: "",
+        comune: {
+            id: 1,
+            nome: "",
+            provincia: {
+                id: 1,
+                nome: "",
+                sigla: ""
+            }
         }
-      }
     },
-    dataInserimento: '',
-    dataUltimoContatto: '',
-    fatturatoAnnuale: 0
+    dataInserimento: "2019-06-01T08:11:01.911+00:00",
+    dataUltimoContatto: "2021-03-24T21:32:06.375+00:00"
   };
 
   constructor(private clientservice: ClientsService, private route: ActivatedRoute) {

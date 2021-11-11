@@ -5,7 +5,9 @@
       <th scope="col">Nome</th>
       <th scope="col">Cognome</th>
       <th scope="col">Ragione Sociale</th>
-      <th scope="col"><a class="btn btn-primary" [routerLink]="['/creator/']">Aggiungi >> </a></th>
+      <div class="float-right">
+        <a class="btn btn-primary mr-5" [routerLink]="['/creator/']">Aggiungi >> </a>
+      </div>
     </tr>
   </thead>
   <tbody>
@@ -14,7 +16,11 @@
       <td>{{ item.nomeContatto }}</td>
       <td>{{ item.cognomeContatto}}</td>
       <td>{{ item.ragioneSociale}}</td>
-      <td><a class="btn btn-warning" [routerLink]="['/details/' + item.id]">Espandi >> </a><a class="btn btn-danger mx-2">Elimina</a></td>
+      <div class="float-right">
+        <td><a class="btn btn-warning mx-2" [routerLink]="['/details/' + item.id]">Espandi >> </a><a
+            (click)="removeClient(item)" class="btn btn-danger mx-2">Elimina</a><a
+            class="btn btn-secondary mx-2" [routerLink]="['/update/' + item.id]">Modifica</a></td>
+      </div>
     </tr>
   </tbody>
 </table>

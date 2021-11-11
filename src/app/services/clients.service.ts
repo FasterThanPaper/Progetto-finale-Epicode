@@ -11,6 +11,7 @@ export class ClientsService {
 
   urlAPI = environment.urlAPI + '/api/clienti?size=150&sort=id,ASC';
   urlAPI_ID = environment.urlAPI + '/api/clienti/';
+  urlAPI_Type = environment.urlAPI + '/api/clienti/tipicliente';
 
   constructor(private http: HttpClient) {
   }
@@ -24,6 +25,18 @@ export class ClientsService {
   }
 
   addCliente(item:IClient) {
-    return this.http.post(this.urlAPI, item);
+    return this.http.post(this.urlAPI_ID, item);
+  }
+
+  getTipoCliente () {
+    return this.http.get<string[]>(this.urlAPI_Type)
+  }
+
+  deleteClient(item: IClient) {
+    return this.http.delete<IClient>(this.urlAPI_ID + item.id)
+  }
+
+  updateClient(item:IClient) {
+    return this.http.put(this.urlAPI_ID+item.id, item);
   }
 }

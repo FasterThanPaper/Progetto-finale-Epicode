@@ -6,73 +6,151 @@
 </ul>
 <div class="container d-flex flex-column align-items-center justify-items-center">
     <div class="my-2">
-        <h3>Aggiungi nuovo Cliente</h3>
+        <h3>Inserisci informazioni Cliente</h3>
     </div>
     <form class="d-flex flex-column w-75">
         <div class="border border-dark p-3 my-2 rounded">
+
             <label for="nome"><b>Nome:&nbsp;</b></label>
-            <input [(ngModel)]="client.nomeContatto" class="mb-1" type="text" name="nome" class="w-25 mr-5 ml-2 border border-dark rounded">
+            <input [(ngModel)]="client.nomeContatto" class="mb-1" type="text" name="nome"
+                class="w-25 mr-5 ml-2 border border-dark rounded">
+
             <label for="cognome"><b>Cognome:&nbsp;</b></label>
-            <input [(ngModel)]="client.cognomeContatto" type="text" name="cognome" class="w-25 ml-2 border border-dark rounded mb-1">
+            <input [(ngModel)]="client.cognomeContatto" type="text" name="cognome"
+                class="w-25 ml-2 border border-dark rounded mb-1">
+
         </div>
         <div class="border p-3 my-2 rounded">
+
             <label for="email"><b>Email:&nbsp;</b></label>
-            <input [(ngModel)]="client.emailContatto" type="text" name="email" class="w-50 ml-2 mb-1 border-dark rounded"><br>
+            <input [(ngModel)]="client.emailContatto" type="text" name="email"
+                class="w-50 ml-2 mb-1 border-dark rounded"><br>
+
             <label for="email_azienda"><b>Email Aziendale:&nbsp;</b></label>
-            <input [(ngModel)]="client.email" type="text" name="email_azienda" class="w-50 ml-2 mb-1 border-dark rounded"><br>
+            <input [(ngModel)]="client.email" type="text" name="email_azienda"
+                class="w-50 ml-2 mb-1 border-dark rounded"><br>
+
             <label for="pec"><b>PEC:&nbsp;</b></label>
             <input [(ngModel)]="client.pec" type="text" name="pec" class="w-50 ml-2 mb-1 border-dark rounded">
+
         </div>
         <div class="border p-3 my-2 rounded">
+
             <label for="telefono"><b>Telefono:&nbsp;</b></label>
-            <input [(ngModel)]="client.telefonoContatto" type="text" name="telefono" class="w-50 mb-2 ml-2 mb-1 border-dark rounded"><br>
+            <input [(ngModel)]="client.telefonoContatto" type="text" name="telefono"
+                class="w-50 mb-2 ml-2 mb-1 border-dark rounded"><br>
+
             <label for="telefono_persona"><b>Telefono Personale:&nbsp;</b></label>
-            <input [(ngModel)]="client.telefono" type="text" name="telefono_persona" class="w-50 ml-2 mb-1 border-dark rounded">
+            <input [(ngModel)]="client.telefono" type="text" name="telefono_persona"
+                class="w-50 ml-2 mb-1 border-dark rounded">
+
         </div>
         <div class="border p-3 my-2 rounded">
+
             <label for="ragione"><b>Ragione Sociale:&nbsp;</b></label>
-            <input [(ngModel)]="client.ragioneSociale" type="text" name="ragione" class="w-50 ml-2 mb-1 border-dark rounded">
+            <input [(ngModel)]="client.ragioneSociale" type="text" name="ragione"
+                class="w-50 ml-2 mb-1 border-dark rounded">
+
+            <div class="border p-1">
+
+                <h3>Tipo Cliente</h3>
+                <select [(ngModel)]="client.tipoCliente" class="form-select" name="indirizzo_legale_provincia">
+                    <option [ngValue]="item" *ngFor="let item of clientType">{{item}}</option>
+                </select>
+
+            </div>
+
         </div>
         <div class="border p-3 my-2 rounded">
+
             <label for="iva"><b>Partita IVA:&nbsp;</b></label>
             <input [(ngModel)]="client.partitaIva" type="text" name="iva" class="w-50 ml-2 mb-1 border-dark rounded">
+
         </div>
         <div class="border p-3 my-2 rounded">
+
             <h4 class="mb-5">Indirizzo sede Operativa</h4>
+
             <label for="via/piazza"><b>Via/Piazza:&nbsp;</b></label>
-            <input [(ngModel)]="client.indirizzoSedeOperativa.via" type="text" name="via/piazza" class="w-75 ml-2 mb-1 border-dark rounded"><br>
+            <input [(ngModel)]="client.indirizzoSedeOperativa.via" type="text" name="via/piazza"
+                class="w-75 ml-2 mb-1 border-dark rounded"><br>
+
             <label for="civico"><b>N. Civico:&nbsp;</b></label>
-            <input [(ngModel)]="client.indirizzoSedeOperativa.civico" type="text" name="civico" class="w-75 ml-2 mb-1 border-dark rounded"><br>
+            <input [(ngModel)]="client.indirizzoSedeOperativa.civico" type="text" name="civico"
+                class="w-75 ml-2 mb-1 border-dark rounded"><br>
+
             <label for="cap"><b>CAP:&nbsp;</b></label>
-            <input [(ngModel)]="client.indirizzoSedeOperativa.cap" type="text" name="cap" class="w-75 ml-2 mb-1 border-dark rounded"><br>
+            <input [(ngModel)]="client.indirizzoSedeOperativa.cap" type="text" name="cap"
+                class="w-75 ml-2 mb-1 border-dark rounded"><br>
+
             <label for="localita"><b>Località:&nbsp;</b></label>
-            <input [(ngModel)]="client.indirizzoSedeOperativa.localita" type="text" name="localita" class="w-75 ml-2 mb-1 border-dark rounded"><br>
-            <label for="comune"><b>Comune:&nbsp;</b></label>
-            <input [(ngModel)]="client.indirizzoSedeOperativa.comune.nome" type="text" name="comune" class="w-75 ml-2 mb-1 border-dark rounded"><br>
-            <label for="provincia"><b>Provincia:&nbsp;</b></label>
-            <input [(ngModel)]="client.indirizzoSedeOperativa.comune.provincia.nome" type="text" name="provincia" class="w-75 ml-2 border border-dark rounded"><br>
-            <label for="sigla"><b>Sigla Provincia:&nbsp;</b></label>
-            <input [(ngModel)]="client.indirizzoSedeOperativa.comune.provincia.sigla" type="text" name="sigla" class="w-25 ml-2 border border-dark rounded mb-1"><br>
+            <input [(ngModel)]="client.indirizzoSedeOperativa.localita" type="text" name="localita"
+                class="w-75 ml-2 mb-1 border-dark rounded"><br>
+
+            <div class="border p-1">
+
+                <h3>Provincia</h3>
+                <select class="form-select" name="indirizzo_legale_provincia">
+                    <option *ngFor="let item of province">{{item.nome}}</option>
+                </select>
+
+            </div>
+
+            <div class="border p-1">
+
+                <h3>Comune</h3>
+                <select class="form-select" [(ngModel)]="client.indirizzoSedeLegale.comune"
+                    name="indirizzo_legale_comune">
+                    <option selected>Seleziona provincia</option>
+                    <option [ngValue]="item" *ngFor="let item of comuni">{{item.nome}}</option>
+                </select>
+
+            </div>
+
+
+
         </div>
         <div class="border p-3 my-2 rounded">
+
             <h4 class="mb-5">Indirizzo sede Legale</h4>
             <label for="via/piazza"><b>Via/Piazza:&nbsp;</b></label>
-            <input [(ngModel)]="client.indirizzoSedeLegale.via" type="text" name="via/piazza" class="w-75 ml-2 border border-dark rounded mb-1"><br>
+            <input [(ngModel)]="client.indirizzoSedeLegale.via" type="text" name="via/piazza"
+                class="w-75 ml-2 border border-dark rounded mb-1"><br>
+
             <label for="civico"><b>N. Civico:&nbsp;</b></label>
-            <input [(ngModel)]="client.indirizzoSedeLegale.civico" type="text" name="civico" class="w-75 ml-2 border border-dark rounded mb-1"><br>
+            <input [(ngModel)]="client.indirizzoSedeLegale.civico" type="text" name="civico"
+                class="w-75 ml-2 border border-dark rounded mb-1"><br>
+
             <label for="cap"><b>CAP:&nbsp;</b></label>
-            <input [(ngModel)]="client.indirizzoSedeLegale.cap" type="text" name="cap" class="w-75 ml-2 border border-dark rounded mb-1"><br>
+            <input [(ngModel)]="client.indirizzoSedeLegale.cap" type="text" name="cap"
+                class="w-75 ml-2 border border-dark rounded mb-1"><br>
+
             <label for="localita"><b>Località:&nbsp;</b></label>
-            <input [(ngModel)]="client.indirizzoSedeLegale.localita" type="text" name="localita" class="w-75 ml-2 border border-dark rounded mb-1"><br>
-            <label for="comune"><b>Comune:&nbsp;</b></label>
-            <input [(ngModel)]="client.indirizzoSedeLegale.comune.nome" type="text" name="comune" class="w-75 ml-2 border border-dark rounded mb-1"><br>
-            <label for="provincia"><b>Provincia:&nbsp;</b></label>
-            <input [(ngModel)]="client.indirizzoSedeLegale.comune.provincia.nome" type="text" name="provincia" class="w-75 ml-2 border border-dark rounded mb-1"><br>
-            <label for="sigla"><b>Sigla Provincia:&nbsp;</b></label>
-            <input [(ngModel)]="client.indirizzoSedeLegale.comune.provincia.sigla" type="text" name="sigla" class="w-25 ml-2 border border-dark rounded mb-1"><br>
+            <input [(ngModel)]="client.indirizzoSedeLegale.localita" type="text" name="localita"
+                class="w-75 ml-2 border border-dark rounded mb-1"><br>
+
+            <div class="border p-1">
+
+                <h3>Provincia</h3>
+                <select class="form-select" name="indirizzo_legale_provincia">
+                    <option *ngFor="let item of province">{{item.nome}}</option>
+                </select>
+
+            </div>
+
+            <div class="border p-1">
+
+                <h3>Comune</h3>
+                <select class="form-select" [(ngModel)]="client.indirizzoSedeLegale.comune"
+                    name="indirizzo_legale_comune">
+                    <option selected>Seleziona provincia</option>
+                    <option [ngValue]="item" *ngFor="let item of comuni">{{item.nome}}</option>
+                </select>
+
+            </div>
         </div>
         <div class="d-flex align-items-center justify-content-center my-4">
-            <a class="btn btn-primary" (click)="nuovoContatto()">Aggiungi Contatto</a>
+            <a class="btn btn-primary" (click)="nuovoContatto()">Salva Contatto</a>
         </div>
     </form>
 </div>

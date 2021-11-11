@@ -4,6 +4,14 @@
       <a class="btn btn-primary" href="#" [routerLink]="['/reader']">
         << Indietro </a>
     </li>
+    <li class="nav-item mx-2">
+      <a class="btn btn-primary" href="#" [routerLink]="['/creator']">
+        Aggiungi Cliente</a>
+    </li>
+    <li class="nav-item mx-2">
+      <a class="btn btn-primary" href="#" [routerLink]="['/update/' + client.id]">
+        Modifica questo Cliente</a>
+    </li>
   </ul>
   <table class="table table-striped">
     <tbody>

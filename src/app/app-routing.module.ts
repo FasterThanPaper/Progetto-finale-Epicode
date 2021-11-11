@@ -19,7 +19,11 @@ const routes: Routes = [
   { path: '',
   pathMatch: 'full',
   redirectTo: 'reader'
-  } 
+  },
+  {
+    path: 'update/:id',
+    component: CreatorComponent
+  }
 ];
 
 @NgModule({
