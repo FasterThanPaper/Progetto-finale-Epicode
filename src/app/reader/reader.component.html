@@ -18,8 +18,8 @@
       <td>{{ item.ragioneSociale}}</td>
       <div class="float-right">
         <td><a class="btn btn-warning mx-2" [routerLink]="['/details/' + item.id]">Espandi >> </a><a
-            (click)="removeClient(item)" class="btn btn-danger mx-2">Elimina</a><a
-            class="btn btn-secondary mx-2" [routerLink]="['/update/' + item.id]">Modifica</a></td>
+            (click)="removeClient(item)" class="btn btn-danger mx-2">Elimina</a><a class="btn btn-secondary mx-2"
+            [routerLink]="['/update/' + item.id]">Modifica</a></td>
       </div>
     </tr>
   </tbody>

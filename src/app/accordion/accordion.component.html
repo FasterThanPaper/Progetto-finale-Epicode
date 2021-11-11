@@ -1,17 +1,40 @@
 <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-    <ngb-panel title="Simple">
+    <ngb-panel title="Mostra Fatture &#9660;">
         <ng-template ngbPanelContent>
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-            officia
-            aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-            tempor,
-            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-            helvetica,
-            craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-            Leggings
-            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-            accusamus
-            labore sustainable VHS.
+            <div id="scatola">
+                <table class="table table-striped mb-3 bordino" *ngFor="let item of recs; index as i">
+                    <tbody>
+                        <tr>
+                            <th scope="row">NUMERO FATTURA</th>
+                            <td><b>{{item.numero}}</b></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">DATA</th>
+                            <td>{{item.data | date}}</td>
+                        </tr>
+                        <tr class="table">
+                            <th scope="row">ANNO</th>
+                            <td>{{item.anno}}</td>
+                        </tr>
+                        <tr class="table">
+                            <th scope="row">IMPORTO</th>
+                            <td>{{item.importo}}</td>
+                        </tr>
+                        <tr class="table">
+                            <th scope="row">STATO</th>
+                            <td>{{item.stato.nome}}</td>
+                        </tr>
+                        <tr class="table">
+                            <th scope="row">Nome</th>
+                            <td>{{item.cliente.nomeContatto}}</td>
+                        </tr>
+                        <tr class="table">
+                            <th scope="row">Cognome</th>
+                            <td>{{item.cliente.cognomeContatto}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </ng-template>
     </ngb-panel>
 </ngb-accordion>

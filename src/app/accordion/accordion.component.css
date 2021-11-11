@@ -1,0 +1,10 @@
+#scatola {
+    height: 500px;
+    overflow: auto;
+}
+
+.bordino {
+    border: solid grey 3px;
+    border-collapse: separate;
+    border-radius: 5px;
+}

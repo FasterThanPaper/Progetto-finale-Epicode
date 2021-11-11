@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class InterceptorInterceptor implements HttpInterceptor {
 
-  bearerAuth = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTYzNjQ3MzAyNiwiZXhwIjoxNjM3MzM3MDI2fQ.BWkAwxjqjze53dbt7s03OXsMhEP4XufJWT76ZGvbO_6bOjRx5ScI7EO8X72-x5VdN1B-wBKd26xV8h6LtD1EFQ';
+  bearerAuth = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTYzNjY0NTU2NCwiZXhwIjoxNjM3NTA5NTY0fQ.MQWCE2q_4RiQUGXTXvIKJOnGtCSJImS6O9G2gzLAuH_Z7qlWBJNXnbB7hyFk0fOnYNfHmpjE6a1m50XMuYDCug';
   tenantID = 'fe_0421';
 
   constructor() { }
@@ -23,7 +23,6 @@ export class InterceptorInterceptor implements HttpInterceptor {
         headers: request.headers.set("Authorization", 'Bearer ' + this.bearerAuth)
           .set("X-TENANT-ID", this.tenantID)
       })
-
     return next.handle(myRequest);
   }
 }
